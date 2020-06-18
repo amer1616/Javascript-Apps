@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Issue tracker App es6</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <section class="hero is-medium is-primary is-bold">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          Issue tracker App
+        </h1>
+        <h2 class="subtitle">
+          Primary bold subtitle
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <div class="section">
+    <div class="container">
+      <div class="tile is-parent">
+        <div class="tile is-child notification is-primary">
+          <h2 class="title is-3">Add new Issue</h2>
+          <form id="issueInputForm">
+            <div class="field">
+              <label class="label">Description:</label>
+              <p class="control">
+                <input id="issueDescInput" class="input" type="text" placeholder="Describe...">
+              </p>
+            </div>
+            <div class="field">
+              <label class="label">Severity:</label>
+              <p class="control">
+                <span class="select">
+            <select id="issueSeverityInput">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+            </select>
+              </span>
+              </p>
+
+            </div>
+            <div class="field">
+              <label class="label">Assigned For:</label>
+              <p class="control">
+                <input id="issueAssignInput" class="input" type="text" placeholder="Asigned for....">
+              </p>
+            </div>
+            <button type="submit" class="button is-info">Add</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="columns">
+    <div id="issuesList" class="column is-8 is-offset-2">
+    </div>
+  </div>
+
+  </div>
+  <footer class="footer ">
+    <div class="container ">
+      <div class="content has-text-centered ">
+        <p>
+          <strong>Bulma</strong> by <a href="http://jgthms.com ">Jeremy Thomas</a>. The source code is licensed
+          <a href="http://opensource.org/licenses/mit-license.php ">MIT</a>. The website content is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/ ">CC ANS 4.0</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chance/1.0.6/chance.min.js "></script>
+  <script type="text/javascript" src="app.js "></script>
+</body>
+
+</html>

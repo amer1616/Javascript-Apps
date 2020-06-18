@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async-fetch-helper todos</title>
+  </head>
+  <body>
+    <h2>Todos</h2>
+    <ul id="todos"></ul>
+    <script>
+      const todos = [];
+      const todoList = document.querySelector("#todos");
+      // proper way of using async/await with fetch
+      async function fetchData(url) {
+        try {
+          let response = await fetch(url);
+          //console.log(response);
+          let data = await response.json();
+          if (response.status == "200") {
+            return data;
+          }
+        } catch (error) {
+          console.log("error", error);
+        }
+      }
+
+      function displayTodos() {
+        const html = todos
+          .map((todo) => {
+            return `
+            <li>
+            <span>${todo.id}</span> - <span>${todo.title}</span>
+            </li>
+          `;
+          })
+          .join("");
+
+        todoList.innerHTML = html;
+      }
+
+      function init() {
+        return fetchData("https://jsonplaceholder.typicode.com/todos").then(
+          (data) => {
+            todos.push(...data);
+            console.log(todos);
+            displayTodos();
+          }
+        );
+      }
+
+      window.addEventListener("load", init);
+    </script>
+  </body>
+</html>

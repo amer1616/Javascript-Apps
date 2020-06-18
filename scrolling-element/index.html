@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scrolling Element</title>
+    <style>
+      main {
+        display: flex;
+        align-items: center;
+      }
+
+      #containerElem {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        font-size: 2em;
+        overflow: auto;
+      }
+
+      #containerElem .scrollingElem {
+        position: absolute;
+        width: 600px;
+        background-color: #c9c9c9;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>Scrolling element</h2>
+
+    <input type="number" name="speed" id="speed" />
+    <main>
+      <div id="containerElem">
+        <div class="scrollingElem">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum,
+          quis nulla ipsa nemo illo quae consectetur recusandae repudiandae
+          expedita explicabo inventore vitae sunt laudantium molestias! Facere
+          maiores maxime saepe sint! Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Sapiente, non officiis. Eligendi, rerum nobis maxime
+          distinctio, accusamus excepturi vel, aliquam impedit officia odio quam
+          rem amet eaque quia nam. Dolorum! Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Voluptas temporibus assumenda esse a
+          inventore voluptatum est dolorem corporis dolore quo beatae, in unde,
+          autem, eaque ipsam similique quia accusamus possimus?
+        </div>
+      </div>
+      <button>Click</button>
+      <div id="output"></div>
+    </main>
+    <script>
+      let scroll = false,
+        scrollInt = null;
+      const $ = (el) => document.querySelector(el);
+      const doc = document.documentElement;
+
+      const updScroll = () => {
+        let temp = $(".scrollingElem").getBoundingClientRect();
+        console.log(temp.height);
+        let scrollable = doc.scrollHeight - window.innerHeight; // doc.scrollHeight equal to window.innerHeight
+        console.log(doc.scrollHeight);
+        // $('#containerElem').style.height = (temp.height / 2) + 'px';
+        // $('.scrollingElem').style.top = temp.height + 'px'
+        console.log($(".scrollingElem").clientHeight); // ($('.scrollingElem').clientHeight) equal to (temp.height)
+
+        let posY = Math.round($("#containerElem").scrollTop);
+        let posX = Math.round($("#containerElem").scrollLeft);
+        console.log(posX, posY);
+        scrollInt = setInterval(() => {
+          let scrollSpeed = 10;
+          // if (posY + $('.scrollingElem').clientHeight > 0) {
+          $("#containerElem").scrollTop = posY - scrollSpeed + "px";
+          // } else {
+          //   $('#containerElem').scrollTop = $('#containerElem').clientHeight + 'px';
+
+          // }
+        }, 500);
+
+        // $('#output').innerHTML = 'Horizontally: ' + x + ' Vertically: ' + y;
+      };
+
+      const scrollSpeed = () => {
+        let speed = 10;
+      };
+
+      $("#containerElem").addEventListener("scroll", updScroll);
+    </script>
+  </body>
+</html>

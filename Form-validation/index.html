@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Form Validation</title>
+  </head>
+  <body>
+    <article class="center mw5 mw6-ns ba hidden mv4 shadow-5">
+      <h1 class="f4 bg-near-black white mv0 pv2 ph3">Sign Up</h1>
+      <form accept-charset="utf-8" class="pa3 bt">
+        <fieldset id="sign_up" class="ba b--transparent ph0 mh0">
+          <legend class="ph0 mh0 fw6 clip">Sign Up</legend>
+          <div class="mt2">
+            <label class="db fw4 lh-copy f6" for="username">Username</label>
+            <input
+              class="b pa2 input-reset ba bg-transparent"
+              type="text"
+              name="username"
+              id="username"
+              placeholder="Enter Username"
+            />
+            <small id="error-username"></small>
+          </div>
+
+          <div class="mt3">
+            <label class="db fw4 lh-copy f6" for="email-address"
+              >Email address</label
+            >
+            <input
+              class="pa2 input-reset ba bg-transparent measure"
+              type="text"
+              name="email"
+              id="email"
+              placeholder="Enetr email"
+            />
+            <small id="error-email"></small>
+          </div>
+          <div class="mt3">
+            <label class="db fw4 lh-copy f6" for="password">Password</label>
+            <input
+              class="b pa2 input-reset ba bg-transparent"
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Enter Password"
+            />
+            <small id="error-password"></small>
+          </div>
+          <div class="mt3">
+            <label class="db fw4 lh-copy f6" for="password2"
+              >Confirm Password</label
+            >
+            <input
+              class="b pa2 input-reset ba bg-transparent measure"
+              type="password"
+              name="password2"
+              id="password2"
+              placeholder="Enter Password Again"
+            />
+            <small id="error-password2"></small>
+          </div>
+        </fieldset>
+        <div class="mt3">
+          <input
+            class="b ph4 pv2 input-reset ba b--black bg-transparent grow pointer f6"
+            type="submit"
+            value="Sign Up"
+          />
+        </div>
+      </form>
+    </article>
+    <script src="main.js"></script>
+  </body>
+</html>

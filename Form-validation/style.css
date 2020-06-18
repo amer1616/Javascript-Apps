@@ -1,0 +1,7 @@
+small.error-on {
+  visibility: visible;
+}
+
+small.error-off {
+  visibility: hidden;
+}
