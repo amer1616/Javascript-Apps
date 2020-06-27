@@ -10,23 +10,64 @@
     <h1>Expense Tracker</h1>
     <div class="container">
       <div class="balance">
-        <h2>Your Balance</h2>
-        <span class="balance-num" id="balance">$1000.00</span>
+        <h4>Your Balance</h4>
+        <span class="bal-money" id="balance">00.00</span>
       </div>
-      <div class="income">
-        <h2>Income</h2>
-        <span class="income-num" id="income">+$0.00</span>
+      <div class="inc-exp-container">
+        <div>
+          <h4>Income</h4>
+          <span class="money inc-money" id="inc-money">0.00</span>
+        </div>
+        <div>
+          <h4>Expense</h4>
+          <span class="money exp-money" id="exp-money">0.00</span>
+        </div>
       </div>
-      <div class="expense">
-        <h2>Income</h2>
-        <span class="expense-num" id="expense">-$0.00</span>
-      </div>
-      <div class="history">
-        <ul>
-          <li><span class="history-item">Cash</span> -$400.00</li>
+      <div class="history-list">
+        <h3>History</h3>
+        <ul class="list">
+          <!-- <li class="minus">
+            Cash<span class="history-amount">-$400.00</span>
+            <button class="remove-btn" id="remove-btn">X</button>
+          </li> -->
         </ul>
       </div>
-      <div class="new-transaction"></div>
+      <div class="inc-transaction">
+        <h3>Add New Income</h3>
+
+        <input
+          type="text"
+          class="inc-title"
+          id="inc-title"
+          placeholder="Enter item name"
+        />
+
+        <input
+          type="number"
+          class="inc-amount"
+          id="inc-amount"
+          placeholder="Enter Amount"
+        />
+        <button class="inc-btn" id="inc-btn">+</button>
+        <div class="exp-transaction">
+          <h3>Add New Expense</h3>
+
+          <input
+            type="text"
+            class="exp-title"
+            id="exp-title"
+            placeholder="Enter item name"
+          />
+
+          <input
+            type="number"
+            class="exp-amount"
+            id="exp-amount"
+            placeholder="Enter Amount"
+          />
+          <button class="exp-btn" id="exp-btn">+</button>
+        </div>
+      </div>
     </div>
     <script src="main.js"></script>
   </body>
