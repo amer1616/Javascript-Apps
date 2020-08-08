@@ -22,7 +22,7 @@ body {
 }
 h1 {
   letter-spacing: 1px;
-  margin-top: 10;
+  margin-top: 10px;
   font-weight: 500;
 }
 
@@ -34,7 +34,7 @@ h3 {
 }
 
 h4 {
-  margin: 6px auto;
+  margin: 4px auto;
   text-transform: uppercase;
   font-weight: 300;
 }

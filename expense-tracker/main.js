@@ -24,7 +24,7 @@ let transactions =
 // console.log(transactions);
 
 // add transaction income item to DOM list
-function addTransactionDOM({ title, amount }) {
+function addTransactionDOM({ id, title, amount }) {
   let sign, signClass;
 
   //console.log(title, amount);
@@ -35,7 +35,7 @@ function addTransactionDOM({ title, amount }) {
   item.classList.add(signClass);
   item.innerHTML = `
   ${title} <span class="history-amount">${sign}${Math.abs(amount)}</span>
-  <button class="remove-btn" id="remove-btn">X</button>
+  <button class="remove-btn" id="remove-btn" onclick="removeTransaction(${id})">X</button>
   `;
   $(".list").appendChild(item);
 
@@ -102,10 +102,9 @@ function addTransaction(e) {
 }
 
 // remove transaction by id
-function removeTransaction(id, e) {
-  e.preventDefault();
-
+function removeTransaction(id) {
   transactions = transactions.filter((trans) => trans.id !== id);
+
   updateLocalStorage();
   initDOM();
 }
