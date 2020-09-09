@@ -14,14 +14,25 @@
     <h1>Audio Player</h1>
     <div class="player-container" id="player-container">
       <div class="player-info">
-        <h4 id="title"></h4>
+        <h4 id="title">Quran Kareem</h4>
         <div class="progress-container" id="progress-container">
           <div class="progress" id="progress"></div>
         </div>
       </div>
       <audio src="audio/fati7a.mp3" id="audio"></audio>
       <div class="img-container">
-        <img id="cover" src="" alt="audio-cover" />
+        <img id="cover" src="images/fati7a.jpg" alt="audio-cover" />
+      </div>
+      <div class="navigation">
+        <button id="prev" class="action-btn">
+          <i class="fas fa-backward"></i>
+        </button>
+        <button id="play" class="action-btn action-btn-big">
+          <i class="fas fa-play"></i>
+        </button>
+        <button id="next" class="action-btn">
+          <i class="fas fa-forward"></i>
+        </button>
       </div>
     </div>
     <script src="app.js"></script>
